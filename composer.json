@@ -10,7 +10,7 @@
   ],
   "require": {
     "laravel/framework": ">=5.1",
-    "laravelcollective/html": "^5.1|^6.0",
+    "konekt/html": ">=5.1",
     "illuminate/support": ">=5.1",
     "yajra/laravel-datatables-oracle": ">=5.1",
     "jenssegers/date": "^3.0|^4.0",
