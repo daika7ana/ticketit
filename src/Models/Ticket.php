@@ -2,8 +2,8 @@
 
 namespace Kordy\Ticketit\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Jenssegers\Date\Date;
 use Kordy\Ticketit\Traits\ContentEllipse;
 use Kordy\Ticketit\Traits\Purifiable;
 
@@ -126,7 +126,7 @@ class Ticket extends Model
      */
     public function freshTimestamp()
     {
-        return new Date();
+        return Carbon::now();
     }
 
     /**
@@ -135,16 +135,16 @@ class Ticket extends Model
     protected function asDateTime($value)
     {
         if (is_numeric($value)) {
-            return Date::createFromTimestamp($value);
+            return Carbon::createFromTimestamp($value);
         } elseif (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $value)) {
-            return Date::createFromFormat('Y-m-d', $value)->startOfDay();
+            return Carbon::createFromFormat('Y-m-d', $value)->startOfDay();
         } elseif (!$value instanceof \DateTimeInterface) {
             $format = $this->getDateFormat();
 
-            return Date::createFromFormat($format, $value);
+            return Carbon::createFromFormat($format, $value);
         }
 
-        return Date::instance($value);
+        return Carbon::instance($value);
     }
 
     /**
