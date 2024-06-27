@@ -22,6 +22,7 @@
 	        processing: false,
 	        serverSide: true,
 	        responsive: true,
+			pagingType: "numbers",
             pageLength: {{ $setting->grab('paginate_items') }},
         	lengthMenu: {{ json_encode($setting->grab('length_menu')) }},
 	        ajax: '{!! route($setting->grab('main_route').'.data', $complete) !!}',

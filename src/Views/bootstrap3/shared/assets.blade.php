@@ -12,7 +12,7 @@
     }
     loadCSS({!! '"'.asset('https://cdn.datatables.net/v/bs/dt-' . Kordy\Ticketit\Helpers\Cdn::DataTables . '/r-' . Kordy\Ticketit\Helpers\Cdn::DataTablesResponsive . '/datatables.min.css').'"' !!});
     @if($editor_enabled)
-        loadCSS({!! '"'.asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/' . Kordy\Ticketit\Helpers\Cdn::Summernote . '/summernote.css').'"' !!});
+        loadCSS({!! '"'.asset('https://cdnjs.cloudflare.com/ajax/libs/summernote/' . Kordy\Ticketit\Helpers\Cdn::Summernote . '/summernote.min.css').'"' !!});
         @if($include_font_awesome)
             loadCSS({!! '"'.asset('https://netdna.bootstrapcdn.com/font-awesome/' . Kordy\Ticketit\Helpers\Cdn::FontAwesome . '/css/font-awesome.min.css').'"' !!});
         @endif

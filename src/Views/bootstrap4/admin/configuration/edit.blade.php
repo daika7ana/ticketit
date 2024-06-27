@@ -120,9 +120,9 @@
 
 
     @if($should_serialize)
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/{{ Kordy\Ticketit\Helpers\Cdn::CodeMirror }}/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/{{ Kordy\Ticketit\Helpers\Cdn::CodeMirror }}/mode/clike/clike.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/{{ Kordy\Ticketit\Helpers\Cdn::CodeMirror }}/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/{{ Kordy\Ticketit\Helpers\Cdn::CodeMirror }}/codemirror.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/{{ Kordy\Ticketit\Helpers\Cdn::CodeMirror }}/mode/clike/clike.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/{{ Kordy\Ticketit\Helpers\Cdn::CodeMirror }}/mode/php/php.min.js" defer></script>
 
 
     <script>

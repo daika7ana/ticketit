@@ -10,12 +10,13 @@
 @stop
 
 @section('footer')
-	<script src="https://cdn.datatables.net/v/bs/dt-{{ Kordy\Ticketit\Helpers\Cdn::DataTables }}/r-{{ Kordy\Ticketit\Helpers\Cdn::DataTablesResponsive }}/datatables.min.js"></script>
+	<script src="https://cdn.datatables.net/v/bs/dt-{{ Kordy\Ticketit\Helpers\Cdn::DataTables }}/r-{{ Kordy\Ticketit\Helpers\Cdn::DataTablesResponsive }}/datatables.min.js" defer></script>
 	<script>
 	    $('.table').DataTable({
-	        processing: false,
+			processing: false,
 	        serverSide: true,
 	        responsive: true,
+			pagingType: "numbers",
             pageLength: {{ $setting->grab('paginate_items') }},
         	lengthMenu: {{ json_encode($setting->grab('length_menu')) }},
 	        ajax: '{!! route($setting->grab('main_route').'.data', $complete) !!}',
