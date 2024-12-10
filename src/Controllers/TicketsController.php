@@ -490,7 +490,7 @@ class TicketsController extends Controller
 
         $created = new Carbon($ticket->created_at);
         $completed = new Carbon($ticket->completed_at);
-        $length = $created->diff($completed)->days;
+        $length = $created->diffInDays($completed, true);
 
         return $length;
     }

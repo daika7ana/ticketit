@@ -9,7 +9,7 @@ use Kordy\Ticketit\Models\Ticket;
 
 class DashboardController extends Controller
 {
-    public function index($indicator_period = 2)
+    public function index()
     {
         $tickets_count = Ticket::count();
         $open_tickets_count = Ticket::whereNull('completed_at')->count();
@@ -43,6 +43,7 @@ class DashboardController extends Controller
 
         // Per Category performance data
         $ticketController = new TicketsController(new Ticket(), new Agent());
+        $indicator_period = request()->input('indicator_period', 2);
         $monthly_performance = $ticketController->monthlyPerfomance($indicator_period);
 
         if (request()->has('cat_page')) {
