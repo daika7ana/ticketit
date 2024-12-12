@@ -62,11 +62,11 @@ Route::group(['middleware' => \Kordy\Ticketit\Helpers\LaravelVersion::authMiddle
 
     Route::group(['middleware' => 'Kordy\Ticketit\Middleware\IsAdminMiddleware'], function () use ($admin_route, $admin_route_path) {
         //Ticket admin index route (ex. http://url/tickets-admin/)
-        Route::get("$admin_route_path/indicator/{indicator_period?}", [
-                'as'   => $admin_route.'.dashboard.indicator',
-                'uses' => 'Kordy\Ticketit\Controllers\DashboardController@index',
+        Route::get("$admin_route_path/indicator", [
+            'as'   => $admin_route.'.dashboard.indicator',
+            'uses' => 'Kordy\Ticketit\Controllers\DashboardController@index',
         ]);
-        Route::get($admin_route_path, 'Kordy\Ticketit\Controllers\DashboardController@index');
+        Route::redirect("$admin_route_path", "$admin_route_path/indicator");
 
         //Ticket statuses admin routes (ex. http://url/tickets-admin/status)
         Route::resource("$admin_route_path/status", 'Kordy\Ticketit\Controllers\StatusesController', [
